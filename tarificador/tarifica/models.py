@@ -16,6 +16,9 @@ from django.db import models
 class Provider(models.Model):
     name = models.CharField(max_length = 255)
     asterisk_id = models.CharField(max_length = 255)
+    def __unicode__(self):
+        return self.name
+
 
 class CDR(models.Model):
     total_cost = models.FloatField()
@@ -23,7 +26,8 @@ class CDR(models.Model):
     total_incoming_calls = models.IntegerField()
     total_outgoing_calls = models.IntegerField()
     total_failed_calls = models.IntegerField()
-
+    def __unicode__(self):
+        return self.total_cost
 
 
 class Destination(models.Model):
@@ -32,6 +36,8 @@ class Destination(models.Model):
     total_cost = models.FloatField()
     #total_duration = 
     total_calls = models.IntegerField()
+    def __unicode__(self):
+        return self.description
 
 
 class Plan(models.Model):
@@ -40,7 +46,8 @@ class Plan(models.Model):
     cost_per_month = models.FloatField()
     has_free_calls = models.BooleanField()
     name = models.CharField(max_length = 255)
-
+    def __unicode__(self):
+        return self.name
 
 
 
@@ -49,7 +56,8 @@ class FreeNumberPlan(models.Model):
     plan = models.ForeignKey(Plan)
     #destination = models.CharField(max_length = 255)
     free_number = models.IntegerField()
-
+    def __unicode__(self):
+        return self.free_number
 
 
 #class FreeCallsPlan(models Model)
