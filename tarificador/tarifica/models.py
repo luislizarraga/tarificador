@@ -13,11 +13,11 @@ from django.db import models
 
 
 
-class Provider(models.Model)
+class Provider(models.Model):
     name = models.CharField(max_length = 255)
     asterisk_id = models.CharField(max_length = 255)
 
-class CDR(models.Model)
+class CDR(models.Model):
     total_cost = models.FloatField()
     date = models.DateTimeField()
     total_incoming_calls = models.IntegerField()
@@ -26,7 +26,7 @@ class CDR(models.Model)
 
 
 
-class Destination(models Model)
+class Destination(models Model):
     prefix = models.CharField(max_length = 255)
     description = models.CharField(max_length = 255)
     total_cost = models.FloatField()
@@ -34,7 +34,7 @@ class Destination(models Model)
     total_calls = models.IntegerField()
 
 
-class Plan(models Model)
+class Plan(models Model):
     provider = models.Foreingkey(Provider)
     has_free_numbers = models.BooleanField()
     cost_per_month = models.FloatField()
@@ -45,7 +45,7 @@ class Plan(models Model)
 
 
 
-class FreeNumberPlan(models Model)
+class FreeNumberPlan(models Model):
     plan = models.Foreingkey(Plan)
     #destination = models.CharField(max_length = 255)
     free_number = models.IntegerField()
