@@ -4,10 +4,60 @@ from django.db import models
 
 class Llamada(models.Model)
     duracion = models.DateTimeField("Duracion de llamada")
-    num_marcado = models.IntegerField(max_length = 200)
-    destino = models.CharField(max_length = 200)
-    costo = models.IntegerField(max_length = 200)
+    num_marcado = models.IntegerField()
+    destino = models.CharField(max_length = 255)
+    costo = models.FloatField()
     fecha_llamada = models.DateTimeField('Fecha de llamada')
-    num_origen = models.IntegerField(max_length = 200)
+    num_origen = models.IntegerField()
+
+
+
+
+class Provider(models.Model)
+    name = models.CharField(max_length = 255)
+    asterisk_id = models.CharField(max_length = 255)
+
+class CDR(models.Model)
+    total_cost = models.FloatField()
+    date = models.DateTimeField()
+    total_incoming_calls = models.IntegerField()
+    total_outgoing_calls = models.IntegerField()
+    total_failed_calls = models.IntegerField()
+
+
+
+class Destination(models Model)
+    prefix = models.CharField(max_length = 255)
+    description = models.CharField(max_length = 255)
+    total_cost = models.FloatField()
+    total_duration = 
+    total_calls = models.IntegerField()
+
+
+class Plan(models Model)
+    provider = models.Foreingkey(Provider)
+    has_free_numbers = models.BooleanField()
+    cost_per_month = models.FloatField()
+    has_free_calls = models.BooleanField()
+    name = models.CharField(max_length = 255)
+
+
+
+
+
+class FreeNumberPlan(models Model)
+    plan = models.Foreingkey(Plan)
+    #destination = models.CharField(max_length = 255)
+    free_number = models.IntegerField()
+
+
+
+#class FreeCallsPlan(models Model)
+#    plan = models.Foreingkey(Plan)
+#    destination = models.CharField(max_length = 255)
+#    free_number = models.IntegerField()
+
+
+
 
 
