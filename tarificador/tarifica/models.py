@@ -2,13 +2,13 @@ from django.db import models
 
 # Create your models here.
 
-class Llamada(models.Model)
-    duracion = models.DateTimeField("Duracion de llamada")
-    num_marcado = models.IntegerField()
-    destino = models.CharField(max_length = 255)
-    costo = models.FloatField()
-    fecha_llamada = models.DateTimeField('Fecha de llamada')
-    num_origen = models.IntegerField()
+#class Llamada(models.Model)
+#    duracion = models.DateTimeField("Duracion de llamada")
+#    num_marcado = models.IntegerField()
+#    destino = models.CharField(max_length = 255)
+#    costo = models.FloatField()
+#    fecha_llamada = models.DateTimeField('Fecha de llamada')
+#    num_origen = models.IntegerField()
 
 
 
