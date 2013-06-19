@@ -56,8 +56,8 @@ class FreeNumberPlan(models.Model):
     plan = models.ForeignKey(Plan)
     #destination = models.CharField(max_length = 255)
     free_number = models.IntegerField()
-    def __unicode__(self):
-        return self.free_number
+    #def __unicode__(self):
+    #    return self.free_number
 
 
 #class FreeCallsPlan(models Model)
