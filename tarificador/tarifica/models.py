@@ -30,7 +30,7 @@ class Destination(models.Model):
     prefix = models.CharField(max_length = 255)
     description = models.CharField(max_length = 255)
     total_cost = models.FloatField()
-    total_duration = 
+    #total_duration = 
     total_calls = models.IntegerField()
 
 
