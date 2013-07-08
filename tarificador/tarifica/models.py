@@ -33,6 +33,7 @@ class CDR(models.Model):
 class Destination(models.Model):
     prefix = models.CharField(max_length = 255)
     description = models.CharField(max_length = 255)
+    type_of_destination = models.CharField(max_length = 255)
     total_cost = models.FloatField()
     #total_duration = 
     total_calls = models.IntegerField()
@@ -44,7 +45,7 @@ class Plan(models.Model):
     provider = models.ForeignKey(Provider)
     has_free_numbers = models.BooleanField()
     cost_per_month = models.FloatField()
-    has_free_calls = models.BooleanField()
+    has_free_calls = models.BooleanField(default = false)
     name = models.CharField(max_length = 255)
     def __unicode__(self):
         return self.name
