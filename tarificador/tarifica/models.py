@@ -47,6 +47,33 @@ class PaymentType(models.Model):
     name = models.CharField(max_length = 255)
 
 
+class DestinationGroup(models.Model):
+    name = models.CharField(max_length = 255)
+    prefix = models.CharField(max_length = 255)
+    matching_number = models.CharField(max_length = 255)
+
+
+class TariffMode(models.Model):
+    name = models.CharField(max_length = 255)
+    def __unicode__(self):
+        return self.name
+
+
+class BaseTariff(models.Model):
+    cost = models.FloatField()
+    mode = models.ForeignKey(TariffMode)
+    destination_group = models.ForeignKey(DestinationGroup)
+
+
+class Bundles(models.Model):
+    name = models.CharField(max_length = 255)
+    destination_group = models.ForeignKey(DestinationGroup)
+    tariff_mode = models.ForeignKey(TariffMode)
+    cost = models.FloatField()
+
+
+
+
 class Provider(models.Model):
     asterisk_id = models.CharField(max_length = 255)
     asterisk_name = models.CharField(max_length = 255)
@@ -61,29 +88,6 @@ class Provider(models.Model):
     period_end = models.DateTimeField()
 
 
-class DestinationGroup(models.Model):
-    name = models.CharField(max_length = 255)
-    prefix = models.CharField(max_length = 255)
-    matching_number = models.CharField(max_length = 255)
-
-
-class BaseTariff(models.Model):
-    cost = models.FloatField()
-    mode = models.ForeignKey(TariffMode)
-    destination_group = models.ForeignKey(DestinationGroup)
-
-
-class TariffMode(models.Model):
-    name = models.CharField(max_length = 255)
-    def __unicode__(self):
-        return self.name
-
-
-class Bundles(models.Model):
-    name = models.CharField(max_length = 255)
-    destination_group = models.ForeignKey(DestinationGroup)
-    tariff_mode = models.ForeignKey(TariffMode)
-    cost = models.FloatField()
 
 
 class Extension(models.Model):
