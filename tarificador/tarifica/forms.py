@@ -13,7 +13,7 @@ class AddProviderInfo(forms.Form):
 class AddBaseTariffs(forms.Form):
     destination_group = forms.CharField(max_length = 255, label = 'Localidad')
     prefix = forms.CharField(max_length = 255, label = 'Prefijo')
-    matching_number = forms.CharField(max_length = 255, label = u'Expresión Regular')
+    matching_number = forms.CharField(max_length = 255, label = 'Expresion Regular')
     tariff_mode = forms.ChoiceField(choices = [(e, e.name) for e in TariffMode.objects.all()], label = 'Modo')
     cost = forms.FloatField(label = 'Costo')
 
