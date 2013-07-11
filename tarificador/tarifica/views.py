@@ -15,7 +15,7 @@ def setupUno(request):
     else:
         form = AddProviderInfo() # An unbound form
 
-    return render(request, 'contact.html', {
+    return render(request, 'tarifica/contact.html', {
         'form': form,
     })
 
