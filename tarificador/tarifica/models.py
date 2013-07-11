@@ -25,7 +25,7 @@ class Destination(models.Model):
 
 
 class Plan(models.Model):
-    provider = models.ForeignKey(Provider)
+    #provider = models.ForeignKey(Provider)
     has_free_numbers = models.BooleanField()
     cost_per_month = models.FloatField()
     has_free_calls = models.BooleanField(default = false)
