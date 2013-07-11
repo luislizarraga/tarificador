@@ -1,5 +1,5 @@
 from django import forms
-from tarifica import models
+from tarifica.models import PaymentType
 
 class AddProviderInfo(forms.Form):
     #provider = forms.ChoiceField(choices = , label = 'Selecciona Troncal')
