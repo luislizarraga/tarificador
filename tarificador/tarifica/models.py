@@ -43,7 +43,8 @@ from django.db import models
     #def __unicode__(self):
     #    return self.free_number
 
-
+class PaymentType(models.Model):
+    name = models.CharField(max_length = 255)
 
 
 class Provider(models.Model):
@@ -58,10 +59,6 @@ class Provider(models.Model):
     bundles = models.ForeignKey(Bundles)
     destination_group = models.ForeignKey(DestinationGroup)
     period_end = models.DateTimeField()
-
-
-class PaymentType(models.Model):
-    name = models.CharField(max_length = 255)
 
 
 class DestinationGroup(models.Model):
