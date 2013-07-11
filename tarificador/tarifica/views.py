@@ -15,7 +15,7 @@ def setupUno(request):
             name = form.cleaned_data['name']
             print(name)
             # ...
-            return HttpResponseRedirect('tarifica/thanks') # Redirect after POST
+            return HttpResponseRedirect('/thanks') # Redirect after POST
     else:
         form = AddProviderInfo() # An unbound form
 
