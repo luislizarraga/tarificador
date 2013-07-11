@@ -6,7 +6,7 @@ class AddProviderInfo(forms.Form):
     name = forms.CharField(label = 'Nombre')
     monthly_cost = forms.FloatField(label = 'Renta Mensual')
     period_end = forms.IntegerField(label = 'Dia de Corte')
-    #payment_type = forms.ChoiceField(choices = [(e, e.name) for e in PaymentType.objects.all()], label = 'Modalidad de Pago')
+    payment_type = forms.ChoiceField(choices = [(e, e.name) for e in PaymentType.objects.all()], label = 'Modalidad de Pago')
     channels = forms.IntegerField(label = 'Canales')
 
 
