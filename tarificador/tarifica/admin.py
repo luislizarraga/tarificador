@@ -1,4 +1,4 @@
 from django.contrib import admin
-from tarifica.models import Provider, Destination, Plan, FreeNumberPlan
+from tarifica.models import Provider
 
 admin.site.register(Provider)
