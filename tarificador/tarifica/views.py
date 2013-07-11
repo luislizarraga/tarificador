@@ -3,7 +3,7 @@
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from tarifica import forms
+from tarifica.forms import AddProviderInfo
 
 def setupUno(request):
     if request.method == 'POST': # If the form has been submitted...
