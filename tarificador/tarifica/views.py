@@ -13,6 +13,7 @@ def setupUno(request):
         form = AddProviderInfo(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             name = form.cleaned_data['name']
+            print(name)
             # ...
             return HttpResponseRedirect('tarifica/thanks') # Redirect after POST
     else:
