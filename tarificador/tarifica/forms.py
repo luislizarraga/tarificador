@@ -2,7 +2,7 @@ from django import forms
 from tarifica import models
 
 class AddProviderInfo(forms.Form):
-    provider = forms.ChoiceField(choices = , label = 'Selecciona Troncal')
+    #provider = forms.ChoiceField(choices = , label = 'Selecciona Troncal')
     name = forms.CharField(label = 'Nombre')
     monthly_cost = forms.FloatField(label = 'Renta Mensual')
     period_end = forms.DateTimeField(label = 'Fecha de Corte')
