@@ -5,7 +5,7 @@ class AddProviderInfo(forms.Form):
     #provider = forms.ChoiceField(choices = , label = 'Selecciona Troncal')
     name = forms.CharField(label = 'Nombre')
     monthly_cost = forms.FloatField(label = 'Renta Mensual')
-    period_end = forms.DateTimeField(label = 'Fecha de Corte', input_formats = '%d/%m')
+    period_end = forms.IntegerField(label = 'Dia de Corte')
     #payment_type = forms.ChoiceField(choices = [(e, e.name) for e in PaymentType.objects.all()], label = 'Modalidad de Pago')
     channels = forms.IntegerField(label = 'Canales')
 
