@@ -22,3 +22,6 @@
 
 
     easy_install-2.7 virtualenv pip
+
+#Installing django
+    sudo pip install django
